@@ -66,4 +66,47 @@ class RestaurantTest {
                 () -> restaurant.removeFromMenu("French fries"));
     }
     // <<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    // >>>>>>>>>>>>>>>>>>>>>>>TOTAL ORDER VALUE<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    // TODO: Write a test case to check if the total order value is calculated correctly
+    // 1) To calculate the total order value, we need to sum the price of all the items  in the menu.
+
+    // 2) if the menu is empty, the total order value should be 0.
+
+    // 3) if no items are selected, the total order value should be 0.
+
+    // Implementing the test cases 1
+    @Test
+    public void when_items_are_selected_total_order_value_should_be_returned() {
+
+        List<Item> selectedItems = new ArrayList<>();
+        selectedItems.add(new Item("Sweet corn soup", 119));
+        selectedItems.add(new Item("Vegetable lasagne", 269));
+        int totalOrderValue = restaurant.totalOrderValue(selectedItems);
+        assertEquals(388, totalOrderValue);
+    }
+
+    // Implementing the test cases 2
+    @Test
+    public void when_no_items_are_selected_total_order_value_should_be_0() {
+
+        List<Item> selectedItems = new ArrayList<>();
+        int totalOrderValue = restaurant.totalOrderValue(selectedItems);
+        assertEquals(0, totalOrderValue);
+    }
+
+    // Implementing the test cases 3
+    @Test
+    public void when_menu_is_empty_total_order_value_should_be_0() {
+
+        restaurant.getMenu().clear();
+        int totalOrderValue = restaurant.totalOrderValue(restaurant.getMenu());
+        assertEquals(0, totalOrderValue);
+    }
+
+    // Failing test case
+    // the above test case is failing because the totalOrderValue method is not implemented in the Restaurant class yet.
+
+    // <<<<<<<<<<<<<<<<<<<<<<<<<TOTAL ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
