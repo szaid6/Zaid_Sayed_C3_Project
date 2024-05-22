@@ -11,13 +11,16 @@ public class Item {
         return name;
     }
     
-    @Override
-    public String toString(){
-        return  name + ":"
-                + price
-                + "\n"
-                ;
-    }
+    // @Override
+    // public String toString(){
+    //     return  name + ":"
+    //             + price
+    //             + "\n"
+    //             ;
+    // }
 
-    
+    // Add a getter for price
+    public int getPrice() {
+        return price;
+    }
 }

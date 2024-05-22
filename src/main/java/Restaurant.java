@@ -53,18 +53,25 @@ public class Restaurant {
         menu.remove(itemToBeRemoved);
     }
 
-    public void displayDetails() {
-        System.out.println("Restaurant:" + name + "\n"
-                + "Location:" + location + "\n"
-                + "Opening time:" + openingTime + "\n"
-                + "Closing time:" + closingTime + "\n"
-                + "Menu:" + "\n" + getMenu());
+    // public void displayDetails() {
+    //     System.out.println("Restaurant:" + name + "\n"
+    //             + "Location:" + location + "\n"
+    //             + "Opening time:" + openingTime + "\n"
+    //             + "Closing time:" + closingTime + "\n"
+    //             + "Menu:" + "\n" + getMenu());
 
-    }
+    // }
 
     public String getName() {
         return name;
     }
 
-    
+    // Calculates the total value of an order based on the prices of the items.
+    public int totalOrderValue(List<Item> items) {
+        int totalOrderValue = 0;
+        for (Item item : items) {
+            totalOrderValue += item.getPrice();
+        }
+        return totalOrderValue;
+    }
 }
